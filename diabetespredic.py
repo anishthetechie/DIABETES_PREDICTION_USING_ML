@@ -73,14 +73,14 @@ test_data_accuracy = accuracy_score(X_train_prediction, Y_train)
 print('Accuracy score of the test data: ',test_data_accuracy)
 
 #MAKING A PREDICTIVE SYSTEM
-input_data = (6,148,72,35,0,33.6,0.627,50)
+input_data = (6,148,72,35,0,33.6,0.627,50) #INPUT DATA FROM USER
 #CHANGING THE INPUT DATA AS NUMPY ARRAY
 input_data_as_nparray = np.asarray(input_data)
 
-#RESHAPING THE ARRAY AS WE ARE PREDICTING FOR ONE INSTANCE
+#RESHAPING THE ARRAY AS WE ARE PREDICTING FOR ONE CASE
 input_data_rehshaped = input_data_as_nparray.reshape(1,-1)
 
-#STANDARDIZE THE INPUT DATA
+#STANDARDIZE THE INPUT DATA (AS THERE IS VARIATION IN INDIVIDUAL DATASETS)
 std_data = scaler.transform(input_data_rehshaped)
 print(std_data)
 
